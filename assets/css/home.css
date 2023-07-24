@@ -1,0 +1,48 @@
+#introduce-text {
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#text-static {
+    font-size: 100px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+}
+
+#texts-dynamic {
+    width: 0;
+    font-size: 90px;
+    font-weight: 600;
+    color: rebeccapurple;
+    border-right: 2px solid rebeccapurple;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 0;
+    animation:
+        typing 4s steps(12) infinite,
+        cusor 0.4s step-end infinite alternate;
+}
+
+.image-container{
+    height: 100%;
+    width: fit-content;
+}
+.image-container img{
+    height: 100%;
+}
+
+@keyframes typing {
+    50% {
+        width: var(--absolute-length);
+    }
+}
+
+@keyframes cusor {
+    50% {
+        border-color: transparent;
+    }
+}
