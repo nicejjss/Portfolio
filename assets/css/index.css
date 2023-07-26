@@ -48,4 +48,9 @@
 
 #left-side, #right-side{
     width: 50%;
+    position: relative;
+}
+
+#left-side {
+    z-index: 99;
 }

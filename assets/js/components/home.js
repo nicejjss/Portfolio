@@ -1,4 +1,5 @@
-export class HomeController {
+import { BaseController } from "../base.js";
+export class HomeController extends BaseController {
 
     dynamicTexts = [
         'Developer',
@@ -9,6 +10,8 @@ export class HomeController {
     staticText = "I'm";
 
     countText = 0;
+
+    setI;
 
     displayContext() {
 
@@ -28,7 +31,7 @@ export class HomeController {
 
     getDynamicElementCircle(introduce) {
         this.getDynamicElement(introduce);
-        setInterval(() => this.getDynamicElement(introduce), 4000);
+        this.setI = setInterval(() => this.getDynamicElement(introduce), 4000);
     }
 
     getDynamicElement(introduce) {
@@ -45,6 +48,14 @@ export class HomeController {
         divDynamicText.innerText = this.dynamicTexts[this.countText];
         introduce.appendChild(divDynamicText);
         this.countText++;
+    }
+
+    clearContext(){
+        let left = document.getElementById('left-side');
+        left.innerHTML = '';
+        let right = document.getElementById('right-side');
+        right.innerHTML = '';
+        clearInterval(this.setI);
     }
 }
 

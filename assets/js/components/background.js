@@ -1,18 +1,22 @@
-import { FLAG_OFF, FLAG_ON, backgrounds } from "../constants.js";
+import { FLAG_OFF, FLAG_ON, aboutbg, backgrounds, codebg, homebg } from "../constants.js";
+import { AboutController } from "./about.js";
+import { CodeController } from "./code.js";
+import { HomeController } from "./home.js";
 
 var backgroundAfter = document.getElementById('backgroundafter');
 var backgroundBefore = document.getElementById('backgroundbefore');
 
+
 export function displayBackground(navigation) {
-    switch (navigation) {
-        case 0: {
-            whatshow(navigation);
+    switch (true) {
+        case (navigation instanceof HomeController): { 
+            whatshow(homebg);
         }; break;
-        case 1: {
-            whatshow(navigation);
+        case (navigation instanceof AboutController): {
+            whatshow(aboutbg);
         }; break;
-        case 2: {
-            whatshow(navigation);
+        case (navigation instanceof CodeController): {
+            whatshow(codebg);
         }; break;
         default:
             whatshow(FLAG_OFF);

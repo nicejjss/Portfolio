@@ -27,12 +27,17 @@
         cusor 0.4s step-end infinite alternate;
 }
 
-.image-container{
-    height: 100%;
-    width: fit-content;
+.image-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.image-container img{
-    height: 100%;
+
+img {
+    width: 100%;
+    -webkit-mask: radial-gradient(at 97px 119px,#000,#0000 70%),linear-gradient(130deg,#000,#0000 48%);
+    -webkit-mask-repeat: no-repeat;
 }
 
 @keyframes typing {
