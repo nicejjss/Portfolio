@@ -13,10 +13,19 @@ export class HomeController extends BaseController {
 
     setI;
 
-    displayContext() {
+    displayRight() {
+        let imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
 
-        let left = document.getElementById('left-side');
+        let image = document.createElement('img');
+        image.src = './assets/resource/image/anhdung2.jpg';
 
+        imageContainer.appendChild(image);
+
+        super.displayRight(imageContainer);
+    }
+
+    displayLeft() {
         let introduce = document.createElement('div');
         introduce.id = 'introduce-text';
 
@@ -26,7 +35,8 @@ export class HomeController extends BaseController {
 
         introduce.appendChild(pstaticText);
         this.getDynamicElementCircle(introduce);
-        left.appendChild(introduce);
+        this.displayAnimation(introduce);
+        super.displayLeft(introduce);
     }
 
     getDynamicElementCircle(introduce) {
@@ -50,11 +60,8 @@ export class HomeController extends BaseController {
         this.countText++;
     }
 
-    clearContext(){
-        let left = document.getElementById('left-side');
-        left.innerHTML = '';
-        let right = document.getElementById('right-side');
-        right.innerHTML = '';
+    clearContext() {
+        super.clearContext();
         clearInterval(this.setI);
     }
 }

@@ -1,15 +1,37 @@
 @import url("./constants.css");
 @import url("./home.css");
+
 * {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     color: var(--text-color);
+    font-family: sans-serif;
 }
 
-.container{
+header {
+    height: 10vh;
+    width: 100%;
+}
+
+#navigation {
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    justify-content: end;
+    padding: 10px;
+}
+
+#navigation li {
+    text-align: center;
+    margin: 0 2vh;
+}
+
+.container {
     display: flex;
     height: 90vh;
+    max-width: 1200px;
 }
 
 #background {
@@ -46,11 +68,33 @@
     opacity: 0;
 }
 
-#left-side, #right-side{
+#left-side,
+#right-side {
     width: 50%;
     position: relative;
 }
 
-#left-side {
-    z-index: 99;
+
+@keyframes displayContext {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes clearContext {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
 }

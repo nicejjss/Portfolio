@@ -15,24 +15,24 @@ class Index {
         document.getElementById('home').onclick = () => {
             var homeContext = document.getElementById('introduce-text');
             if (!document.body.contains(homeContext)) {
-                // this.codeController.clearContext();
-                // this.aboutController.clearContext();
+                this.codeController.clearContext();
+                this.aboutController.clearContext();
                 this.homeController.displayContext();
             }
             displayBackground(this.homeController);
         }
 
-        document.getElementById('about').onclick = () => {          
-            // this.homeController.clearContext();
-            // this.codeController.clearContext();
-            // this.aboutController.displayContext();
+        document.getElementById('about').onclick = () => {        
+            this.homeController.clearContext();
+            this.codeController.clearContext();
+            this.aboutController.displayContext();
             displayBackground(this.aboutController);
         }
 
-        document.getElementById('coding').onclick = () => {
-            // this.aboutController.clearContext();
-            // this.homeController.clearContext();
-            // this.codeController.displayContext();
+        document.getElementById('code').onclick = () => {
+            this.aboutController.clearContext();
+            this.homeController.clearContext();
+            this.codeController.displayContext();
             displayBackground(this.codeController);
         }
     }
