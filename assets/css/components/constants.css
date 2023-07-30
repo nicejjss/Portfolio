@@ -1,4 +1,6 @@
 :root {
     --absolute-length: 100%; 
     --text-color: white;
+    --FLAG-OFF: 0;
+    --FLAG-ON: 1;
 }

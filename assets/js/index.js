@@ -1,44 +1,59 @@
-import { AboutController } from './components/about.js';
-import { displayBackground } from './components/background.js';
-import { CodeController } from './components/code.js';
-import { HomeController } from './components/home.js';
+import { AboutController } from './about.js';
+import { Background } from './components/background.js';
+import { CodeController } from './code.js';
+import { HomeController } from './home.js';
+import { NavigationController } from './components/navigation.js';
 
 class Index {
 
-    constructor(homeController, codeController, aboutController) {
+    constructor(homeController, codeController, aboutController, Background, Navigation) {
         this.homeController = homeController;
         this.codeController = codeController;
         this.aboutController = aboutController;
+        this.Background = Background;
+        this.Navigation = Navigation;
     }
+
+    DisplayNavigation() {
+        this.Navigation.displayContext();
+    }
+
 
     DisplayFunction() {
         document.getElementById('home').onclick = () => {
-            var homeContext = document.getElementById('introduce-text');
+            var homeContext = document.getElementsByClassName('image-container-home')[0];
             if (!document.body.contains(homeContext)) {
                 this.codeController.clearContext();
                 this.aboutController.clearContext();
                 this.homeController.displayContext();
             }
-            displayBackground(this.homeController);
+            background.displayBackground(this.homeController);
+            // navigation.displayUnderline(this.homeController);
         }
 
-        document.getElementById('about').onclick = () => {        
+        document.getElementById('about').onclick = () => {
             this.homeController.clearContext();
             this.codeController.clearContext();
             this.aboutController.displayContext();
-            displayBackground(this.aboutController);
+            background.displayBackground(this.aboutController);
+            // navigation.displayUnderline(this.aboutController);
         }
 
         document.getElementById('code').onclick = () => {
-            this.aboutController.clearContext();
-            this.homeController.clearContext();
-            this.codeController.displayContext();
-            displayBackground(this.codeController);
+            var listCode = document.getElementById('list-web');
+            if (!document.body.contains(listCode)) {
+                this.aboutController.clearContext();
+                this.homeController.clearContext();
+                this.codeController.displayContext();
+            }
+
+            background.displayBackground(this.codeController);
+            // navigation.displayUnderline(this.codeController);
         }
     }
 
-    displayDefault(){
-        this.homeController.displayContext();
+    displayDefault() {
+        this.aboutController.displayContext();
     }
 
 }
@@ -47,7 +62,10 @@ class Index {
 let homeController = new HomeController();
 let codeController = new CodeController();
 let aboutController = new AboutController();
+let background = new Background();
+let navigation = new NavigationController();
 
-let index = new Index(homeController, codeController, aboutController);
+let index = new Index(homeController, codeController, aboutController, background, navigation);
+index.DisplayNavigation();
 index.DisplayFunction();
 index.displayDefault();

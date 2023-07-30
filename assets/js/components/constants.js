@@ -7,6 +7,9 @@ export const backgrounds = [
     "linear-gradient(109deg, #1f153d 44% 44%, #000 100%)",
 ]
 
+export const navigations = [
+    'home', 'about', 'code',
+];
 
 export const homebg = 0;
 export const aboutbg = 1;

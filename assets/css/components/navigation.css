@@ -1,0 +1,23 @@
+#navigation {
+    display: flex;
+    height: 100%;
+    margin: var(--FLAG-OFF);
+    justify-content: end;
+    align-items: center;
+}
+
+#navigation li {
+    margin: var(--FLAG-OFF) 2vh;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+#navigation li::after {
+    content: '';
+    position: absolute;
+    bottom: var(--FLAG-OFF);
+    width: 100%;
+    left: var(--FLAG-OFF);
+}

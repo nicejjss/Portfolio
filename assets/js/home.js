@@ -1,4 +1,4 @@
-import { BaseController } from "../base.js";
+import { BaseController } from "./components/base.js";
 export class HomeController extends BaseController {
 
     dynamicTexts = [
@@ -15,28 +15,31 @@ export class HomeController extends BaseController {
 
     displayRight() {
         let imageContainer = document.createElement('div');
-        imageContainer.className = 'image-container';
+        imageContainer.className = 'image-container-home';
 
         let image = document.createElement('img');
+        image.classList.add('image');
         image.src = './assets/resource/image/anhdung2.jpg';
 
         imageContainer.appendChild(image);
-
+        this.displayAnimation(imageContainer, 'fromRightToLeft', 0.5, 'linear',0.5);
         super.displayRight(imageContainer);
     }
 
     displayLeft() {
-        let introduce = document.createElement('div');
-        introduce.id = 'introduce-text';
+        let introduce = this.displayIntroduce();
+        this.displayLeftDetail(introduce);
+        super.displayLeft(introduce);
+    }
 
+    displayLeftDetail(element){
         let pstaticText = document.createElement('p');
         pstaticText.id = 'text-static';
         pstaticText.innerText = this.staticText;
 
-        introduce.appendChild(pstaticText);
-        this.getDynamicElementCircle(introduce);
-        this.displayAnimation(introduce);
-        super.displayLeft(introduce);
+        element.appendChild(pstaticText);
+        this.getDynamicElementCircle(element);
+        this.displayAnimation(pstaticText, 'fromLeftToRight', 0.5, 'linear',0);
     }
 
     getDynamicElementCircle(introduce) {
@@ -50,14 +53,23 @@ export class HomeController extends BaseController {
             dynamicT.remove();
         }
 
-        if (this.countText === 3) {
+        if (this.countText === this.dynamicTexts.length) {
             this.countText = 0;
         }
+
         let divDynamicText = document.createElement('div');
         divDynamicText.id = 'texts-dynamic';
+        divDynamicText.classList.add('text');
         divDynamicText.innerText = this.dynamicTexts[this.countText];
         introduce.appendChild(divDynamicText);
         this.countText++;
+    }
+
+    changeBaseElement(){
+        let container = document.getElementsByClassName('container')[0];
+        container.style.height = '90vh';
+        let introduceT= document.getElementById('introduce-text');
+        introduceT.style.position = 'absolute'
     }
 
     clearContext() {

@@ -1,0 +1,33 @@
+#background {
+    position: fixed;
+    top: var(--FLAG-OFF);
+    bottom: var(--FLAG-OFF);
+    left: var(--FLAG-OFF);
+    right: var(--FLAG-OFF);
+    background-image: linear-gradient(109deg, #000 44% 44%, #4d4855 100%);
+    z-index: -99;
+}
+
+#backgroundafter {
+    position: absolute;
+    content: '';
+    top: var(--FLAG-OFF);
+    right: var(--FLAG-OFF);
+    bottom: var(--FLAG-OFF);
+    left: var(--FLAG-OFF);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: var(--FLAG-OFF);
+}
+
+#backgroundbefore {
+    position: absolute;
+    content: '';
+    top: var(--FLAG-OFF);
+    right: var(--FLAG-OFF);
+    bottom: var(--FLAG-OFF);
+    left: var(--FLAG-OFF);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: var(--FLAG-OFF);
+}
