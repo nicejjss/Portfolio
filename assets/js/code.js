@@ -7,7 +7,7 @@ export class CodeController extends BaseController {
     codeItems = [
         {
             'name': 'BLOG',
-            'technique': 'HTML, CSS, JS, PHP',
+            'technique': 'HTML, CSS, JS, PHP, MYSQL',
             'link': 'https://mycms001.000webhostapp.com/',
             'year': 2022,
         },
@@ -124,19 +124,13 @@ export class CodeController extends BaseController {
 
         let iframe = document.createElement('iframe');
         iframe.src = context.link;
+        iframe.setAttribute('loading','lazy');
         iframe.setAttribute('scrolling', 'no');
         iframe.setAttribute('frameborder', FLAG_OFF);
+        iframe.classList.add('bordered');
 
         li.appendChild(a);
         li.appendChild(iframe);
     }
-
-    changeBaseElement(){
-        let container = document.getElementsByClassName('container')[0];
-        container.style.height = '90vh';
-        let introduceT= document.getElementById('introduce-text');
-        introduceT.style.position = 'absolute';
-    }
-
 }
 

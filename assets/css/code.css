@@ -28,7 +28,7 @@
     width: 300px;
     height: 400px;
     position: relative;
-    margin: 10px 0;
+    margin: 10px;
 }
 
 .item-web-container{
@@ -52,12 +52,6 @@
 .link {
     display: inline-block !important;
     text-decoration: none;
-}
-
-iframe{
-    height: 100%;
-    border-radius: 10px;
-    scroll-behavior: unset;
 }
 
 .item-web-link{

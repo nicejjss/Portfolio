@@ -65,13 +65,6 @@ export class HomeController extends BaseController {
         this.countText++;
     }
 
-    changeBaseElement(){
-        let container = document.getElementsByClassName('container')[0];
-        container.style.height = '90vh';
-        let introduceT= document.getElementById('introduce-text');
-        introduceT.style.position = 'absolute'
-    }
-
     clearContext() {
         super.clearContext();
         clearInterval(this.setI);

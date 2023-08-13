@@ -54,6 +54,9 @@ class Index {
 
     displayDefault() {
         this.aboutController.displayContext();
+        let video = document.getElementsByTagName('video')[0];
+        // video.play()
+        background.displayBackground(this.aboutController);
     }
 
 }
@@ -69,3 +72,4 @@ let index = new Index(homeController, codeController, aboutController, backgroun
 index.DisplayNavigation();
 index.DisplayFunction();
 index.displayDefault();
+

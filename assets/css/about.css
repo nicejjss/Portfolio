@@ -1,0 +1,35 @@
+#content-container {
+    margin-left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.about-text {
+    height: 70%;
+    padding: 20px;
+}
+
+#contact-list {
+    display: flex;
+    margin: 20px 0;
+    list-style: none;
+}
+
+.contact-icon {
+    width: 50%;
+}
+
+.contact-item {
+    width: 20%;
+    margin: var(--FLAG-OFF);
+    opacity: var(--FLAG-OFF);
+}
+
+.text-asd {
+    line-height: calc(var(--absolute-length) * 2);
+}
+
+.fontsize40 {
+    font-size: 40px;
+}

@@ -14,6 +14,11 @@
     position: relative;
 }
 
+#navigation li:hover,#navigation li:active {
+    color: #fab95b;
+    transition: all 0.2s linear;
+}
+
 #navigation li::after {
     content: '';
     position: absolute;

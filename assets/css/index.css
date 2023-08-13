@@ -3,6 +3,7 @@
 @import url("./components/navigation.css");
 @import url("./home.css");
 @import url("./code.css");
+@import url("./about.css");
 
 
 * {
@@ -11,6 +12,7 @@
     box-sizing: border-box;
     color: var(--text-color);
     font-family: sans-serif;
+    font-weight: 600;
 }
 
 header {
@@ -41,7 +43,7 @@ header {
     font-size: 5vw;
 }
 
-.cleardot{
+.cleardot {
     list-style-type: none;
 }
 
@@ -49,40 +51,64 @@ header {
     position: absolute !important;
 }
 
-.relative{
+.relative {
     position: relative;
     display: block;
 }
 
 
+iframe {
+    height: 100%;
+    scroll-behavior: unset;
+}
+
+.bordered {
+    border-radius: 10px;
+}
+
 
 @keyframes fromLeftToRight {
-    0%{
+    0% {
         left: -10%;
         opacity: var(--FLAG-OFF);
     }
-    100%{
+
+    100% {
         left: var(--FLAG-OFF);
-        opacity: 1;
+        opacity: var(--FLAG-ON);
     }
 }
 
 @keyframes fromRightToLeft {
-    0%{
+    0% {
         right: -10%;
         opacity: var(--FLAG-OFF);
     }
-    100%{
+
+    100% {
         right: var(--FLAG-OFF);
-        opacity: 1;
+        opacity: var(--FLAG-ON);
     }
 }
 
 @keyframes scaleDown {
-    0%{
+    0% {
         transform: scale(1.25);
     }
-    100%{
+
+    100% {
         transform: scale(1);
+    }
+}
+
+@keyframes fromBottomToTop {
+    0% {
+        top: -10%;
+        opacity: var(--FLAG-OFF);
+    }
+
+    100%{
+        opacity: var(--FLAG-ON);
+        top: var(--FLAG-OFF);
     }
 }
