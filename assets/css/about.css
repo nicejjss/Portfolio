@@ -26,10 +26,20 @@
     opacity: var(--FLAG-OFF);
 }
 
-.text-asd {
+.text-info {
     line-height: calc(var(--absolute-length) * 2);
+    opacity: var(--FLAG-OFF);
 }
 
 .fontsize40 {
     font-size: 40px;
+}
+
+#music-list {
+    width: 100%;
+    height: 152px;
+}
+
+#music-text {
+    margin: 20px 0;
 }

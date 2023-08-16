@@ -1,6 +1,15 @@
 import { BaseController } from "./components/base.js";
+import { FLAG_OFF } from './components/constants.js'
 
 export class AboutController extends BaseController {
+
+    infors = [
+        'Some knowledge of IT',
+        'Just a student with the desire of knowledge',
+        'Create with my fun',
+        'Game make life better',
+        '+84-914-696-280 - Locdaoduc2002@gmail.com',
+    ]
 
     contacts = [
         {
@@ -24,7 +33,20 @@ export class AboutController extends BaseController {
     }
 
     displayLeftDetail(element) {
+        element.classList.add('bordered');
+        element.classList.add('about-text');
+        element.style.width = '100%';
+        element.style.background = 'linear-gradient(45deg, #ef55554a, #fdff6dad)';
+        this.displayAnimation(element, 'fromBottomToTop', 0.5, 'linear', 0);
 
+        this.infors.forEach((infor,key) => {
+            let inforText = document.createElement('div');
+            inforText.textContent = infor;
+            inforText.classList.add('text-info');
+            inforText.classList.add('relative');
+            this.displayAnimation(inforText, 'fromBottomToTop', 0.2, 'ease-out', key * 0.5);
+            element.appendChild(inforText);
+        });
     }
 
     displayRight() {
@@ -63,7 +85,7 @@ export class AboutController extends BaseController {
             let li = document.createElement('li');
             li.className = 'contact-item relative';
             this.contactItemDetail(li, contact);
-            this.displayAnimation(li, 'fromRightToLeft', 0.5, 'linear', index * 0.75);
+            this.displayAnimation(li, 'fromRightToLeft', 0.5, 'linear', index * 0.5);
             contactList.appendChild(li);
         });
     }
@@ -78,8 +100,22 @@ export class AboutController extends BaseController {
         li.appendChild(a);
     }
 
-    musicDetail() {
+    musicDetail(musicContainer) {
+        let musicText = document.createElement('div');
+        musicText.id = 'music-text';
+        musicText.textContent = 'If you get bored:';
+        musicText.classList.add('fontsize40');
 
+        let musicList = document.createElement('iframe');
+        musicList.id = 'music-list';
+        musicList.classList.add('relative');
+        musicList.src = 'https://open.spotify.com/embed/playlist/5K4XVUWJlHyo35nJ30qY90?utm_source=generator';
+        musicList.setAttribute('frameborder', FLAG_OFF);
+        // musicList.setAttribute('loading', 'lazy');
+        this.displayAnimation(musicList, 'fromBottomToTop', 1, 'linear', 0);
+
+        musicContainer.appendChild(musicText);
+        musicContainer.appendChild(musicList);
     }
 }
 

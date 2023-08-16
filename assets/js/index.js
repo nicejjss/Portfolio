@@ -28,15 +28,16 @@ class Index {
                 this.homeController.displayContext();
             }
             background.displayBackground(this.homeController);
-            // navigation.displayUnderline(this.homeController);
         }
 
         document.getElementById('about').onclick = () => {
-            this.homeController.clearContext();
-            this.codeController.clearContext();
-            this.aboutController.displayContext();
+            var contenContainer = document.getElementById('content-container');
+            if (!document.body.contains(contenContainer)) {
+                this.homeController.clearContext();
+                this.codeController.clearContext();
+                this.aboutController.displayContext();
+            }
             background.displayBackground(this.aboutController);
-            // navigation.displayUnderline(this.aboutController);
         }
 
         document.getElementById('code').onclick = () => {
@@ -48,7 +49,6 @@ class Index {
             }
 
             background.displayBackground(this.codeController);
-            // navigation.displayUnderline(this.codeController);
         }
     }
 
