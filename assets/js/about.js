@@ -7,7 +7,7 @@ export class AboutController extends BaseController {
         'Some knowledge of IT',
         'Just a student with the desire of knowledge',
         'Create with my fun',
-        'Game make life better',
+        'Games make life better',
         '+84-914-696-280 - Locdaoduc2002@gmail.com',
     ]
 
