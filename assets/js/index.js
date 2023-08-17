@@ -53,9 +53,7 @@ class Index {
     }
 
     displayDefault() {
-        this.aboutController.displayContext();
-        let video = document.getElementsByTagName('video')[0];
-        // video.play()
+        this.homeController.displayContext();
         background.displayBackground(this.aboutController);
     }
 
