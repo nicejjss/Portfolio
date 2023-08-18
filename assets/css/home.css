@@ -25,8 +25,9 @@
     margin-left: var(--FLAG-OFF);
     position: relative;
     animation:
-        typing 4s steps(12) infinite,
+        typing 6s steps(12) infinite,
         cusor 0.4s step-end infinite alternate;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .image-container-home {
@@ -45,8 +46,20 @@
 }
 
 @keyframes typing {
+    0% {
+        width: var(--FLAG-OFF);
+    }
+    25% {
+        width: var(--absolute-length);
+    }
     50% {
         width: var(--absolute-length);
+    }
+    75% {
+        width: var(--absolute-length);
+    }
+    100% {
+        width: var(--FLAG-OFF);
     }
 }
 

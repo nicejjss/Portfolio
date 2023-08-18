@@ -44,7 +44,7 @@ export class HomeController extends BaseController {
 
     getDynamicElementCircle(introduce) {
         this.getDynamicElement(introduce);
-        this.setI = setInterval(() => this.getDynamicElement(introduce), 4000);
+        this.setI = setInterval(() => this.getDynamicElement(introduce), 6000);
     }
 
     getDynamicElement(introduce) {
