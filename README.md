@@ -1,4 +1,4 @@
 # Portfilio
 https://nicejjss.github.io/Portfilio/
 
-just ué for PC, No resposive
+just use for PC, No resposive
