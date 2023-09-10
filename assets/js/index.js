@@ -48,7 +48,7 @@ class Index {
                 this.codeController.displayContext();
             }
 
-            background.displayBackground(this.codeController);
+            background.displayBackground(this.homeController);
         }
     }
 
