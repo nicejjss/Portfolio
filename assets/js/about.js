@@ -70,7 +70,7 @@ export class AboutController extends BaseController {
         let contactText = document.createElement('div');
         contactText.id = 'contact-text';
         contactText.classList.add('fontsize40');
-        contactText.textContent = 'You can see me in:';
+        contactText.textContent = 'You can see me on:';
 
         let contactList = document.createElement('ul');
         contactList.id = 'contact-list';
