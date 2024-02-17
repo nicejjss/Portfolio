@@ -21,7 +21,7 @@ class Index {
 
     DisplayFunction() {
         document.getElementById('home').onclick = () => {
-            var homeContext = document.getElementsByClassName('image-container-home')[0];
+            let homeContext = document.getElementsByClassName('image-container-home')[0];
             if (!document.body.contains(homeContext)) {
                 this.codeController.clearContext();
                 this.aboutController.clearContext();
@@ -31,7 +31,7 @@ class Index {
         }
 
         document.getElementById('about').onclick = () => {
-            var contenContainer = document.getElementById('content-container');
+            let contenContainer = document.getElementById('content-container');
             if (!document.body.contains(contenContainer)) {
                 this.homeController.clearContext();
                 this.codeController.clearContext();
@@ -40,15 +40,15 @@ class Index {
             background.displayBackground(this.aboutController);
         }
 
-        document.getElementById('code').onclick = () => {
-            var listCode = document.getElementById('list-web');
+        document.getElementById('projects').onclick = () => {
+            let listCode = document.getElementById('list-web');
             if (!document.body.contains(listCode)) {
                 this.aboutController.clearContext();
                 this.homeController.clearContext();
                 this.codeController.displayContext();
             }
 
-            background.displayBackground(this.homeController);
+            background.displayBackground(this.codeController);
         }
     }
 

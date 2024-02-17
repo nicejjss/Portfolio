@@ -8,7 +8,7 @@ export const backgrounds = [
 ]
 
 export const navigations = [
-    'home', 'about', 'code',
+    'home', 'about', 'projects',
 ];
 
 export const homebg = 0;
