@@ -26,12 +26,13 @@ export class Background {
     }
 
     whatshow(navigation) {
+        let navigation1 = navigation ?? 0;
         if (this.backgroundAfter.style.opacity == FLAG_ON) {
             this.backgroundAfter.style.opacity = FLAG_OFF;
-            this.showBackground(this.backgroundBefore, navigation)
+            this.showBackground(this.backgroundBefore, navigation1)
         } else {
             this.backgroundBefore.style.opacity = FLAG_OFF;
-            this.showBackground(this.backgroundAfter, navigation);
+            this.showBackground(this.backgroundAfter, navigation1);
         }
     }
 

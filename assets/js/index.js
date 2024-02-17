@@ -54,7 +54,7 @@ class Index {
 
     displayDefault() {
         this.homeController.displayContext();
-        background.displayBackground(this.aboutController);
+        background.displayBackground(this.homeController);
     }
 
 }
