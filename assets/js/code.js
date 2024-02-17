@@ -6,14 +6,20 @@ export class CodeController extends BaseController {
     openT = "Projects";
     codeItems = [
         {
+            'name': 'DOTS',
+            'tech': 'HTML, CSS, JS',
+            'link': 'https://dots-sage.vercel.app/',
+            'year': 2023,
+        },
+        {
             'name': 'BLOG',
-            'technique': 'HTML, CSS, JS, PHP, MYSQL',
+            'tech': 'HTML, CSS, JS, PHP, MYSQL',
             'link': 'https://mycms001.000webhostapp.com/',
             'year': 2022,
         },
         {
             'name': 'WORKPLACE',
-            'technique': 'HTML, CSS, JS',
+            'tech': 'HTML, CSS, JS',
             'link': 'https://nicejjss.github.io/workspace/',
             'year': 2021,
         },
@@ -26,58 +32,6 @@ export class CodeController extends BaseController {
 
         this.displayItemWeb(listWeb);
         super.displayRight(listWeb);
-    }
-
-    displayLeft() {
-        let introduce = this.displayIntroduce();
-        this.displayLeftDetail(introduce);
-        super.displayLeft(introduce);
-    }
-
-    displayLeftDetail(element) {
-
-        let headerText = document.createElement('div');
-        headerText.id = 'text-head';
-        headerText.className = 'text relative';
-        headerText.innerText = 'PROJECTS'
-        let ul = document.createElement('ul');
-        ul.classList.add('cleardot');
-        ul.id = 'list-code';
-
-
-        let delay = 0.1;
-        this.codeItems.forEach((element, key) => {
-            let li = document.createElement('li');
-            li.classList.add('item-code');
-            
-            let pTitle = document.createElement('p');
-            pTitle.className = 'item-title relative';
-            pTitle.innerText = element.name;
-
-            this.displayAnimation(pTitle, 'fromLeftToRight', 0.5, 'linear', (delay * key) + delay);
-
-            delay = delay + 0.1;
-
-            let pContent = document.createElement('p');
-            pContent.className = 'item-content relative';
-            pContent.innerText = element.technique;
-            this.displayAnimation(pContent, 'fromLeftToRight', 0.5, 'linear', (delay * key) + delay);
-
-            delay = delay + 0.1;
-
-            let pYear = document.createElement('p');
-            pYear.className = 'item-content relative';
-            pYear.innerText = element.year;
-            this.displayAnimation(pYear, 'fromLeftToRight', 0.5, 'linear', (delay * key) + delay);
-
-            li.appendChild(pTitle);
-            li.appendChild(pContent);
-            li.appendChild(pYear);
-
-            ul.appendChild(li);
-        });
-        element.appendChild(headerText);
-        element.appendChild(ul);
     }
 
     displayItemWeb(listWeb) {
@@ -104,7 +58,22 @@ export class CodeController extends BaseController {
             webName.href = context.link;
             webName.innerText = context.name;
 
-            div.appendChild(webName);
+            let webTech = document.createElement('p');
+            webTech.className = 'web-tech';
+            webTech.innerText = context.tech;
+
+            let webYear = document.createElement('p');
+            webYear.className = 'web-year';
+            webYear.innerText = context.year;
+
+            let webInfo = document.createElement('div');
+            webInfo.id = 'web-info';
+
+            webInfo.appendChild(webName);
+            webInfo.appendChild(webTech);
+            webInfo.appendChild(webYear);
+
+            div.appendChild(webInfo);
 
             if(key%2 === 0){
                 this.displayAnimation(div, 'fromRightToLeft', 0.5, 'linear', (0.2 * key) + 0.2);

@@ -66,3 +66,11 @@
 .container {
     justify-content: center;
 }
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.web-tech {
+    margin: 20px 0;
+}

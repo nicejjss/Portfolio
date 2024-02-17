@@ -6,19 +6,25 @@ export class BaseController {
         this.changeBaseElement();
     }
 
-    displayRight(element) {
+    displayRight(element = null) {
         let right = document.getElementById('right-side');
-        right.appendChild(element);
+        if (element != null) {
+            right.appendChild(element);
+        } else {
+            right.style.display = 'none';
+        }
     }
 
-    displayLeft(element) {
+    displayLeft(element = null) {
         let left = document.getElementById('left-side');
-        left.appendChild(element);
+        if (element != null) {
+            left.appendChild(element);
+        } else {
+            left.style.display = 'none';
+        }
     }
 
-    displayLeftDetail(){
-
-    }
+    displayLeftDetail(){}
 
     clearContext() {
         let left = document.getElementById('left-side');
