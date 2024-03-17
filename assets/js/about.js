@@ -24,6 +24,10 @@ export class AboutController extends BaseController {
             'link': 'https://www.linkedin.com/in/đào-lộc-a0a17624a',
             'img': './assets/resource/icon/contacts/linkedin.png',
         },
+        {
+            'link': 'https://github.com/nicejjss',
+            'img': './assets/resource/icon/contacts/github.png',
+        },
     ];
 
     displayLeft() {
