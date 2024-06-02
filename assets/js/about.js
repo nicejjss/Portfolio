@@ -18,6 +18,7 @@ export class AboutController extends BaseController {
         '1. Reading books',
         '2. Playing soccer',
         "3. Singing (just when I'm alone)",
+        '',
         '+84-914-696-280 - Locdaoduc2002@gmail.com',
     ]
 
