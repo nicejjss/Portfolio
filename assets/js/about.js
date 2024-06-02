@@ -4,10 +4,20 @@ import { FLAG_OFF } from './components/constants.js'
 export class AboutController extends BaseController {
 
     infors = [
-        'Some knowledge of IT',
-        'Just a student with the desire of knowledge',
-        'Create with my fun',
-        'Games make life better',
+        'Good to see you here, my name is Loc Dao, a student from Hanoi Open University.',
+        "This's just a simple page I have created, Take a look.",
+        'Cheers!',
+        '',
+        '',
+        'Skills:',
+        '1. Front-end: HTML - CSS - JavaScript',
+        '2. Backe-end: PHP - Laravel - MySQL',
+        '3. Cache: Redis',
+        '',
+        'Interested:',
+        '1. Reading books',
+        '2. Playing soccer',
+        "3. Singing (just when I'm alone)",
         '+84-914-696-280 - Locdaoduc2002@gmail.com',
     ]
 
@@ -44,12 +54,19 @@ export class AboutController extends BaseController {
         this.displayAnimation(element, 'fromBottomToTop', 0.5, 'linear', 0);
 
         this.infors.forEach((infor,key) => {
-            let inforText = document.createElement('div');
-            inforText.textContent = infor;
-            inforText.classList.add('text-info');
-            inforText.classList.add('relative');
-            this.displayAnimation(inforText, 'fromBottomToTop', 0.2, 'ease-out', key * 0.5);
-            element.appendChild(inforText);
+            if (infor) {
+                let inforText = document.createElement('div');
+                inforText.textContent = infor;
+                inforText.classList.add('text-info');
+                inforText.classList.add('relative');
+                this.displayAnimation(inforText, 'fromBottomToTop', 0.2, 'ease-out', key * 0.5);
+                element.appendChild(inforText);
+            } else {
+                let inforText = document.createElement('br');
+                element.appendChild(inforText);
+            }
+
+            
         });
     }
 

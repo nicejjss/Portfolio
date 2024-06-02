@@ -1,5 +1,5 @@
 import { BaseController } from "./components/base.js";
-import { FLAG_OFF } from "./components/constants.js"
+import { FLAG_OFF, FLAG_ON } from "./components/constants.js"
 
 export class CodeController extends BaseController {
 
@@ -9,6 +9,8 @@ export class CodeController extends BaseController {
             'name': 'DOTS',
             'tech': 'HTML, CSS, JS',
             'link': 'https://dots-sage.vercel.app/',
+            'img': './assets/resource/image/web/dots.png',
+            'status': FLAG_ON,
             'year': 2023,
         },
         {
@@ -21,6 +23,8 @@ export class CodeController extends BaseController {
             'name': 'WORKPLACE',
             'tech': 'HTML, CSS, JS',
             'link': 'https://nicejjss.github.io/workspace/',
+            'img': './assets/resource/image/web/workplace.png',
+            'status': FLAG_ON,
             'year': 2021,
         },
     ]
@@ -66,12 +70,25 @@ export class CodeController extends BaseController {
             webYear.className = 'web-year';
             webYear.innerText = context.year;
 
+            let webStatus = document.createElement('p');
+            webStatus.className = 'web-tech';
+            
+            let status = 'Status: ';
+
+            if (context.status) {
+                webStatus.innerText = status + 'Active';
+            } else {
+                webStatus.innerText = status + 'Maintain';
+            }
+            
+
             let webInfo = document.createElement('div');
             webInfo.id = 'web-info';
 
             webInfo.appendChild(webName);
             webInfo.appendChild(webTech);
             webInfo.appendChild(webYear);
+            webInfo.appendChild(webStatus);
 
             div.appendChild(webInfo);
 
@@ -91,15 +108,23 @@ export class CodeController extends BaseController {
         a.classList.add('item-web-link');
         a.href = context.link;
 
-        let iframe = document.createElement('iframe');
-        iframe.src = context.link;
-        iframe.setAttribute('loading','lazy');
-        iframe.setAttribute('scrolling', 'no');
-        iframe.setAttribute('frameborder', FLAG_OFF);
-        iframe.classList.add('bordered');
+        let img = document.createElement('img');
+        img.alt = context.name;
+
+        if (context.img) {
+            img.src = context.img;
+        } else {
+            img.src = './assets/resource/image/web/maintain.png';
+        }
+        
+        // img.setAttribute('loading','lazy');
+        // img.setAttribute('scrolling', 'no');
+        // img.setAttribute('frameborder', FLAG_OFF);
+        img.classList.add('bordered');
+        img.classList.add('item-img');
 
         li.appendChild(a);
-        li.appendChild(iframe);
+        a.appendChild(img);
     }
 }
 
