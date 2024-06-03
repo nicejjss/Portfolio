@@ -4,7 +4,7 @@ export class HomeController extends BaseController {
     dynamicTexts = [
         'Developer',
         'Gamer',
-        'Kẻ Mộng Mơ',
+        'Dream Maker',
     ];
 
     staticText = "I'm";
