@@ -27,6 +27,14 @@ export class CodeController extends BaseController {
             'status': FLAG_ON,
             'year': 2021,
         },
+        {
+            'name': 'MusicApp',
+            'tech': 'HTML, CSS, JS',
+            'link': 'https://nicejjss.github.io/music-App/',
+            'img': './assets/resource/image/web/musicapp.png',
+            'status': FLAG_ON,
+            'year': 2021,
+        },
     ]
 
     displayRight() {
