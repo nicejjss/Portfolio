@@ -15,10 +15,8 @@ export class AboutController extends BaseController {
         '3. Cache: Redis',
         '',
         'Interested:',
-        '1. Reading books',
-        '2. Playing soccer',
-        '3. Playing video games',
-        "4. Singing (just when I'm alone)",
+        '1. Playing soccer',
+        '2. Playing video games',
         '',
         '+84-914-696-280 - Locdaoduc2002@gmail.com',
     ]
