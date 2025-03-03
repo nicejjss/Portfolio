@@ -4,7 +4,7 @@ import { FLAG_OFF } from './components/constants.js'
 export class AboutController extends BaseController {
 
     infors = [
-        'Good to see you here, my name is Loc Dao, a student from Hanoi Open University.',
+        'Good to see you here! My name is Loc Dao, an Information Technology engineer.',
         "This's just a simple page I have created, Take a look.",
         'Cheers!',
         '',
