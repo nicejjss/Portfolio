@@ -4,7 +4,7 @@
 @import url("./home.css");
 @import url("./code.css");
 @import url("./about.css");
-
+@import url("./timeline.css");
 
 * {
     margin: var(--FLAG-OFF) auto;

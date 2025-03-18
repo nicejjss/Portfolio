@@ -1,7 +1,8 @@
-import { FLAG_OFF, FLAG_ON, aboutbg, backgrounds, codebg, homebg } from "./constants.js";
+import { FLAG_OFF, FLAG_ON, aboutbg, backgrounds, codebg, homebg, timebg} from "./constants.js";
 import { AboutController } from "../about.js";
 import { CodeController } from "../code.js";
 import { HomeController } from "../home.js";
+import { TimelineController } from "../timeline.js";
 
 export class Background {
 
@@ -19,6 +20,9 @@ export class Background {
             }; break;
             case (navigation instanceof CodeController): {
                 this.whatshow(codebg);
+            }; break;
+            case (navigation instanceof TimelineController): {
+                this.whatshow(timebg);
             }; break;
             default:
                 this.whatshow(FLAG_OFF);

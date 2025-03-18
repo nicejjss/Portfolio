@@ -1,6 +1,3 @@
-import { CodeController } from "../code.js"
-import { AboutController } from "../about.js";
-import { HomeController } from "../home.js";
 import { BaseController } from "./base.js";
 import { navigations } from "./constants.js"
 
@@ -24,35 +21,4 @@ export class NavigationController extends BaseController {
         let header = document.getElementById('header');
         header.appendChild(ul);
     }
-
-    displayUnderline(element) {
-        switch(true) {
-            case (element instanceof HomeController):
-                this.clearUnderline();
-                this.showUnderline('home');
-                break;
-            case (element instanceof AboutController):
-                this.clearUnderline();
-                this.showUnderline('about');
-                break;
-            case (element instanceof CodeController):
-                this.clearUnderline();
-                this.showUnderline('code');
-                break;
-        }
-
-    }
-
-    showUnderline(element) {
-        let ele = document.getElementById(element);
-        ele.style.textDecoration = 'underline';
-    }
-
-    clearUnderline() {
-        let list = document.querySelectorAll('#navigation li');
-        list.forEach(element => {
-            element.style.textDecoration = 'none';
-        });
-    }
-    
 }
