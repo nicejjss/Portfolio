@@ -13,7 +13,6 @@ export class AboutController extends BaseController {
         '1. Front-end: HTML - CSS - JavaScript',
         '2. Backe-end: PHP - Laravel',
         '3. Database: SQL Server - MySQL',
-        '4. Cache: Redis',
         '',
         'Interested:',
         '1. Playing soccer',
