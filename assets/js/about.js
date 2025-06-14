@@ -10,9 +10,11 @@ export class AboutController extends BaseController {
         '',
         '',
         'Skills:',
-        '1. Front-end: HTML - CSS - JavaScript',
+        '1. Front-end: HTML - CSS - JavaScript - ReactJS',
         '2. Backe-end: PHP - Laravel',
-        '3. Database: SQL Server - MySQL',
+        '3. Database: SQL Server - MySQL - Redis',
+        '4. Version Controller: Git - Github - Gitlab',
+        '5. Project Management: Backlog'
         '',
         'Interested:',
         '1. Playing soccer',
