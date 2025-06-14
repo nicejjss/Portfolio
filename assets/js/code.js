@@ -7,11 +7,11 @@ export class CodeController extends BaseController {
     codeItems = [
         {
             'name': 'DOTS',
-            'tech': 'HTML, CSS, JS',
-            'link': 'https://dots-sage.vercel.app/',
+            'tech': 'ReactJS',
+            'link': 'https://dots-react.vercel.app/',
             'img': './assets/resource/image/web/dots.png',
             'status': FLAG_ON,
-            'year': 2023,
+            'year': 2025,
         },
         {
             'name': 'BLOG',
