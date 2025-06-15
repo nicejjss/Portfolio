@@ -14,7 +14,7 @@ export class AboutController extends BaseController {
         '2. Backe-end: PHP - Laravel',
         '3. Database: SQL Server - MySQL - Redis',
         '4. Version Controller: Git - Github - Gitlab',
-        '5. Project Management: Backlog'
+        '5. Project Management: Backlog',
         '',
         'Interested:',
         '1. Playing soccer',
